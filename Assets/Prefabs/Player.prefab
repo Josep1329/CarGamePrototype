@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 8785486746209878293}
   - component: {fileID: 6071786074127959158}
   - component: {fileID: 6914578195079331961}
+  - component: {fileID: 6848893488998077721}
+  - component: {fileID: 7075974372560683653}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 643324047341722869}
   serializedVersion: 2
   m_LocalRotation: {x: -0.007228794, y: -0.007287273, z: -0.7042111, w: -0.70991653}
-  m_LocalPosition: {x: 8.09627, y: 0.736, z: -1.9437}
+  m_LocalPosition: {x: 8.08, y: 2.52, z: -1.9437}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -67,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 8939a9d37c3a60143933b4a1f595657a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,6 +129,9 @@ MonoBehaviour:
   baseSpeed: 10
   clutchMultiplier: 2
   clutchWindow: 0.2
+  boostDuration: 1
+  _CurrentSpeed: 0
+  _BoostTimeRemaining: 0
 --- !u!114 &6914578195079331961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,4 +150,35 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 6071786074127959158}
+  - {fileID: 6848893488998077721}
+  - {fileID: 7075974372560683653}
   ForceRemoteRenderTimeframe: 0
+--- !u!114 &6848893488998077721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643324047341722869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
+--- !u!114 &7075974372560683653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643324047341722869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be672f841cd07ac4eae5202bcdcbf9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

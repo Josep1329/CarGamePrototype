@@ -2,19 +2,12 @@ using UnityEngine;
 using Fusion;
 using System.Linq;
 
-public class NetworkGameManager : NetworkBehaviour
+public class NetworkGameManager : SimulationBehaviour
 {
     [Header("Prefabs")]
     public GameObject playerCarPrefab;
 
-    public override void Spawned()
-    {
-        if (Object.HasInputAuthority)
-        {
-            // Instanciar el coche del jugador en la red
-            Runner.Spawn(playerCarPrefab, GetSpawnPosition(), Quaternion.identity, Object.InputAuthority);
-        }
-    }
+    // Spawn logic moved to PlayerSpawner (INetworkRunnerCallbacks) to avoid duplicate spawns
 
     private Vector3 GetSpawnPosition()
     {
